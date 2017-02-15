@@ -4,7 +4,8 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float speed;
-	public Canvas text;
+	public GameObject text;
+	public GameObject naechstesLevel;
 
 	private Rigidbody rb;
 
@@ -17,7 +18,8 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag("Pick Up"))
 			other.gameObject.SetActive(false);
-			text.gameObject.SetActive(true);
+			text.SetActive(true);
+			naechstesLevel.SetActive(true);
 		
 	}
 }

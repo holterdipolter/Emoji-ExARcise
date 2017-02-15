@@ -3,34 +3,32 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class ClickCaliFertig : MonoBehaviour {
 
-	public GameObject Spielbrett;
+	//set off at click
 	public GameObject BackgroundPlane;
+	public GameObject Startscreen;
 	public GameObject CaliFertig;
-	public GameObject Restart;
-
-	public GameObject RefLUanim;
-	public GameObject RefROanim;
-	public GameObject RefLUbig;
-	public GameObject RefRObig;
-	public GameObject RefTObig;
-
-
 	public GameObject KaliKreisTOchild;
+	public GameObject Player;
+	public GameObject TextGewonnen;
+	public GameObject naechstesLevel;
+
+	//set on at click
+	public GameObject Game;
+
 
 	// Use this for initialization
 	void Start () {
 
-		Spielbrett.SetActive(false);
+		Player.SetActive(false);
+		TextGewonnen.SetActive(false);
+		naechstesLevel.SetActive(false);
+
 		BackgroundPlane.SetActive(true);
-		Restart.SetActive(false);
-
-		RefLUbig.SetActive(true);
-		RefRObig.SetActive(true);
-		RefTObig.SetActive(true);
-		RefLUanim.SetActive(false);
-		RefROanim.SetActive(false);
-
+		Startscreen.SetActive(true);
+		CaliFertig.SetActive(true);
 		KaliKreisTOchild.SetActive(true);
+
+		Game.SetActive(false);
 
 	}
 
@@ -39,18 +37,17 @@ public class ClickCaliFertig : MonoBehaviour {
 	
 	}
 	void OnMouseDown() {
-		Spielbrett.SetActive(true);
+
 		BackgroundPlane.SetActive(false);
+		Startscreen.SetActive(false);
 		CaliFertig.SetActive(false);
-		Restart.SetActive(true);
-
-		RefLUbig.SetActive(false);
-		RefRObig.SetActive(false);
-		RefTObig.SetActive(false);
-		RefLUanim.SetActive(true);
-		RefROanim.SetActive(true);
-
 		KaliKreisTOchild.SetActive(false);
+
+		Game.SetActive(true);
+
+		Player.SetActive(false);
+		TextGewonnen.SetActive(false);
+		naechstesLevel.SetActive(false);
 
 	}
 }

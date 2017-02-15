@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-public class ClickStart : MonoBehaviour {
+public class ClickExit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +13,6 @@ public class ClickStart : MonoBehaviour {
 	
 	}
 	void OnMouseDown() {
-		SceneManager.LoadScene ("Game+Cali");
+		Application.Quit();
 	}
 }

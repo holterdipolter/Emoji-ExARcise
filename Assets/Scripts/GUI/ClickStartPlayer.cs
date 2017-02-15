@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-public class ClickStart : MonoBehaviour {
+public class ClickStartPlayer : MonoBehaviour {
+
+	public GameObject Player;
+	public GameObject PlayerStatic;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +16,9 @@ public class ClickStart : MonoBehaviour {
 	
 	}
 	void OnMouseDown() {
-		SceneManager.LoadScene ("Game+Cali");
+
+		PlayerStatic.SetActive(false);
+		Player.SetActive(true);
+
 	}
 }
