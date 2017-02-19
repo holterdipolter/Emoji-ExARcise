@@ -13,6 +13,6 @@ public class ClickStart : MonoBehaviour {
 	
 	}
 	void OnMouseDown() {
-		SceneManager.LoadScene ("Game+Cali");
+		SceneManager.LoadScene ("Game");
 	}
 }
