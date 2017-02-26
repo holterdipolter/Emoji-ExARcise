@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DigitalRuby.SoundManagerNamespace;
 
 public class PlayerController : MonoBehaviour {
 
 	public float speed;
 	public GameObject text;
 	public GameObject naechstesLevel;
+	public AudioSoundManager audioman;
 
 	private Rigidbody rb;
 
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 			other.gameObject.SetActive(false);
 			text.SetActive(true);
 			naechstesLevel.SetActive(true);
+		audioman.PlaySound (1);
 		
 	}
 }

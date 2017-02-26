@@ -60,7 +60,7 @@ namespace DigitalRuby.SoundManagerNamespace
 
 		private void Update()
 		{
-			CheckClick();
+			//CheckClick();
 		}
 
 		public void SoundVolumeChanged()
