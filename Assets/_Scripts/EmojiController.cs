@@ -2,8 +2,9 @@
 using System.Collections;
 using DigitalRuby.SoundManagerNamespace;
 
-public class PlayerController : MonoBehaviour {
+public class EmojiController : MonoBehaviour {
 
+	public int level;
 	public float speed;
 	public GameObject text;
 	public GameObject naechstesLevel;
@@ -22,8 +23,9 @@ public class PlayerController : MonoBehaviour {
 			other.gameObject.SetActive(false);
 			text.SetActive(true);
 			naechstesLevel.SetActive(true);
-		audioman.PlaySound (1);
-		
+			audioman.PlaySound (1);
+			PlayerPrefs.SetInt("level", level);
+			Debug.Log("saveLevel " +level);
 	}
 }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DigitalRuby.SoundManagerNamespace;
 
-public class Levelload : MonoBehaviour {
+public class playMusic : MonoBehaviour {
 
 	public AudioSoundManager soundmanager;
 	// Use this for initialization
