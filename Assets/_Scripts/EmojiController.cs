@@ -19,13 +19,16 @@ public class EmojiController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag("Pick Up"))
-			other.gameObject.SetActive(false);
-			text.SetActive(true);
-			naechstesLevel.SetActive(true);
+		if (other.gameObject.CompareTag ("Pick Up")) {
+			other.gameObject.SetActive (false);
+			text.SetActive (true);
+			naechstesLevel.SetActive (true);
 			audioman.PlaySound (1);
-			PlayerPrefs.SetInt("level", level);
-			Debug.Log("saveLevel " +level);
+			if (PlayerPrefs.GetInt("level") < level) {
+				PlayerPrefs.SetInt ("level", level);
+				Debug.Log ("saveLevel " + level);
+			}
+		}
 	}
 }
 
