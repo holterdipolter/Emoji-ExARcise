@@ -48,12 +48,16 @@ public class GameObjectController : MonoBehaviour {
 
 		transform.position = new Vector3(posWS.x,posWS.y,-0.5f);
 
-		print(" qrLU: "+ TargetRefLUScreenSpace + " qrRO: "+ TargetRefROScreenSpace + " TO: "+ TargetTangibleObjScreenSpace + " pos: "+ pos + " RefDistance: " + (ImageRefRO.transform.position.x - ImageRefLU.transform.position.x) + " Heading: " + (Mathf.Rad2Deg*Mathf.Asin(TargetTangibleObj.transform.forward.x)));
+		//print(" qrLU: "+ TargetRefLUScreenSpace + " qrRO: "+ TargetRefROScreenSpace + " TO: "+ TargetTangibleObjScreenSpace + " pos: "+ pos + " RefDistance: " + (ImageRefRO.transform.position.x - ImageRefLU.transform.position.x) + " Heading: " + (Mathf.Rad2Deg*Mathf.Asin(TargetTangibleObj.transform.forward.x)));
 
 
 		// ROTATION
 
 		transform.eulerAngles = new Vector3 (0,0,(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) +90));
+
+		//transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.identity, speed * Time.deltaTime);
+		//'speed' is a variable you define or a constant you insert and is measured in degrees per second.
+		//If you want an eased rotation, change 'RotateTowards' to 'Slerp' and adjust the 'speed' downward a bunch.
 
 		//print ("Heading: " + transform.forward.x * Mathf.Rad2Deg);
 	}
