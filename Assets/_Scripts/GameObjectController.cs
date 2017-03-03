@@ -51,7 +51,7 @@ public class GameObjectController : MonoBehaviour {
 		//print(" qrLU: "+ TargetRefLUScreenSpace + " qrRO: "+ TargetRefROScreenSpace + " TO: "+ TargetTangibleObjScreenSpace + " pos: "+ pos + " RefDistance: " + (ImageRefRO.transform.position.x - ImageRefLU.transform.position.x) + " Heading: " + (Mathf.Rad2Deg*Mathf.Asin(TargetTangibleObj.transform.forward.x)));
 
 
-		// ROTATION
+		// Rotation:
 
 		transform.eulerAngles = new Vector3 (0,0,(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) +90));
 
