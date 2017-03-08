@@ -9,50 +9,30 @@ public class LoadLevel : MonoBehaviour {
 	private int level = 0;
 
 	private GameObject[] levelObjects;
-
-
 	private Button levelObjectButton;
-
+	private Text levelObjectButtonText;
 
 	void Start () {
 
-		levelObjects = GameObject.FindGameObjectsWithTag("unlocked").OrderBy( go => go.name ).ToArray();
+		levelObjects = GameObject.FindGameObjectsWithTag("ButtonLevel").OrderBy( go => go.name ).ToArray();
 
 		level = PlayerPrefs.GetInt("level");
 		Debug.Log("loadedLevelState: " +level);
 
-
+		int i = 0;
 
 		foreach (GameObject element in levelObjects)
 		{
-			//element.SetActive(false);
-			
-			levelObjectButton = element.GetComponent<Button>();
-			Debug.Log ("TEST1");
-			levelObjectButton.enabled = !levelObjectButton.enabled;
+			if (i > level) {
+				levelObjectButton = element.GetComponent<Button>();
+				levelObjectButton.interactable = false;
 
-			levelObjectButton.interactable = false;
-			Debug.Log ("TEST2");
+				levelObjectButtonText = levelObjectButton.GetComponentInChildren<Text>();
+				levelObjectButtonText.color = new Color32(0,0,0,100);
 
-
-					
-			//levelObjectColor = element.GetComponent<Image>().Color;
-			//levelObjectColor = new Color32(255,255,255,255);
-
-			//levelObjectButton = element.GetComponent<Button>;
-			//levelObjectButton.SetActive (false);
-
-
-		}
-
-		for (int i = 0; i<=level; i++){
-
-			if (i == levelObjects.Length) {
-				Debug.Log ("ArrayEnde");
 			}
+			i++;
 
-			levelObjects[i].SetActive(true);
-			Debug.Log ("ActivatedLevel: " + i);
 
 		}
 

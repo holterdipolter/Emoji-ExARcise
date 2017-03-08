@@ -19,6 +19,8 @@ public class EmojiController : MonoBehaviour {
 	private float gravityAwake;
 	private TriggerValues gravityNew;
 
+	//GetComponent<Button>().enabled = false;
+
 	void Awake ()
 	{
 		rigidb = GetComponent<Rigidbody2D>();
