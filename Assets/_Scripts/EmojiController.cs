@@ -50,13 +50,13 @@ public class EmojiController : MonoBehaviour {
 
 		if (other.gameObject.CompareTag ("gravityIn")) {
 
-			Debug.Log("Trigger gravityIn");
+			Debug.Log ("Trigger gravityIn");
 			TriggerX1.SetActive (true);
 
-			gravityNew = other.GetComponent<TriggerValues>();
+			gravityNew = other.GetComponent<TriggerValues> ();
 			rigidb.gravityScale = gravityNew.Gravity;
 
-		}
+		} 
 
 		if (other.gameObject.CompareTag ("gravityOut")) {
 
@@ -64,8 +64,6 @@ public class EmojiController : MonoBehaviour {
 			TriggerX2.SetActive (true);
 
 			rigidb.gravityScale = gravityAwake;
-
-
 		}
 	}
 
