@@ -63,14 +63,16 @@ namespace DigitalRuby.SoundManagerNamespace
 			//CheckClick();
 		}
 
-		public void SoundVolumeChanged()
+		public void Mute()
 		{
-			SoundManager.SoundVolume = SoundSlider.value;
+			SoundManager.SoundVolume = 0f;
+			SoundManager.MusicVolume = 0f;
 		}
 
-		public void MusicVolumeChanged()
+		public void UnMute()
 		{
-			SoundManager.MusicVolume = MusicSlider.value;
+			SoundManager.SoundVolume = 1f;
+			SoundManager.MusicVolume = 1f;
 		}
 	}
 }
