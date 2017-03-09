@@ -140,7 +140,7 @@
             <resampledTextureWidth>640</resampledTextureWidth>
         </osx>
     </webcam>
-    <webcam deviceName="Logitech QuickCam Pro 9000">
+    <webcam deviceName="Logitech QuickCam Pro xxx9000">
         <windows>
             <!-- size of the web cam texture requested from Unity -->
             <requestedTextureWidth>1920</requestedTextureWidth>
