@@ -28,7 +28,6 @@ public class EmojiController : MonoBehaviour {
 
 	}
 
-
 	void OnTriggerEnter2D(Collider2D other) {
 		
 		if (other.gameObject.CompareTag ("Pick Up")) {
