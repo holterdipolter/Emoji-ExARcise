@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DigitalRuby.SoundManagerNamespace;
 
-public class playMusic : MonoBehaviour {
+public class startMusic : MonoBehaviour {
 
 	public AudioSoundManager soundmanager;
 	// Use this for initialization
@@ -18,9 +18,6 @@ public class playMusic : MonoBehaviour {
 	}
 
 	void OnEnable(){
-		soundmanager.PlayMusic (2);
-		
-
-	
+		soundmanager.PlayMusic (0);
 	}
 }

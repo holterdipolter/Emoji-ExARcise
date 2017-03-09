@@ -3,10 +3,6 @@ using System.Collections;
 
 public class RectMoverInstructions : MonoBehaviour {
 
-	//public float AmplitudeX;
-	//public float AmplitudeY;
-	//public float Speed;
-
 
 	public GameObject text;
 	private Vector3 pos;
