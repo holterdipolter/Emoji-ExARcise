@@ -17,6 +17,16 @@ public class StartAction : MonoBehaviour {
 		SceneManager.LoadScene("LevelMenu");
 	}
 
+	public void LoadLevelMenuCheck()  {
+		lastLevel = PlayerPrefs.GetInt ("lastLevel");
+
+		if (lastLevel == 0) {
+			SceneManager.LoadScene ("Instructions");
+		} else {
+			SceneManager.LoadScene ("LevelMenu");
+		}
+	}
+
 	public void LoadExit()  {
 		Application.Quit();
 	}
@@ -34,16 +44,6 @@ public class StartAction : MonoBehaviour {
 	public void restart()  {
 		currentLevel = SceneManager.GetActiveScene().buildIndex;
 		SceneManager.LoadScene (currentLevel);
-	}
-
-	public void LoadLevel1Check()  {
-		lastLevel = PlayerPrefs.GetInt ("lastLevel");
-
-		if (lastLevel == 0) {
-			SceneManager.LoadScene ("Instructions");
-		} else {
-			SceneManager.LoadScene (1);
-		}
 	}
 
 	public void LoadLevel1()  {
