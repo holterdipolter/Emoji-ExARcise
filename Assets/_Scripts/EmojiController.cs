@@ -38,7 +38,7 @@ public class EmojiController : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			text.SetActive (true);
 			naechstesLevel.SetActive (true);
-			audioman.PlaySound (1);
+			audioman.PlaySound (5);
 
 			if (PlayerPrefs.GetInt("level") < level) {
 				PlayerPrefs.SetInt ("level", level);

@@ -72,7 +72,6 @@ public class StartAction : MonoBehaviour {
 
 	public void LoadStory()  {
 		SceneManager.LoadScene("Story");
-		Debug.Log ("StoryLoad");
 	}
 
 	public void DeletePrefs()  {

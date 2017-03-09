@@ -26,14 +26,14 @@ namespace DigitalRuby.SoundManagerNamespace
 
 		public void PlaySound(int index)
 		{
-			print ("klicksound");
+			
 			SoundAudioSources[index].PlayOneShotSoundManaged(SoundAudioSources[index].clip);
 
 		}
 
 		public void PlayMusic(int index)
 		{
-			print ("klickmusic");
+			
 			MusicAudioSources[index].PlayLoopingMusicManaged(1.0f, 1.0f, true);
 
 		}

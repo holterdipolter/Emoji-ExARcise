@@ -363,6 +363,7 @@ namespace DigitalRuby.SoundManagerNamespace
         private void Start()
         {
             UnityEngine.SceneManagement.SceneManager.sceneLoaded += SceneManagerSceneLoaded;
+
         }
 
         private void Update()
