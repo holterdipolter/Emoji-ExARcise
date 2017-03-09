@@ -22,7 +22,7 @@ public class RectMover : MonoBehaviour {
 	}
 
 	public void moveBack(){
-		if (j > 50) {
+		if (j > 40) {
 			pos = transform.localPosition;
 			if (pos.x < -1)
 				bewegung = true;
@@ -35,7 +35,7 @@ public class RectMover : MonoBehaviour {
 	}
 
 	public void moveNext(){
-		if (j > 50) {
+		if (j > 40) {
 			pos = transform.localPosition;
 			if (pos.x > -3001){
 				bewegung = true;
@@ -50,11 +50,11 @@ public class RectMover : MonoBehaviour {
 	void Update () {
 		j++;
 
-		if (j > 50)
+		if (j > 40)
 			bewegung = false;
 
 		if (bewegung) {
-			pos.x = pos.x +20*richtung;
+			pos.x = pos.x +25*richtung;
 			transform.localPosition = pos;
 		}
 		if (pos.x < -3500) {
