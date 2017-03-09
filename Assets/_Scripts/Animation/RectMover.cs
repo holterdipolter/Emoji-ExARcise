@@ -7,7 +7,7 @@ public class RectMover : MonoBehaviour {
 	//public float AmplitudeY;
 	//public float Speed;
 
-
+	public StartAction other;
 	public GameObject text;
 	private Vector3 pos;
 	private int richtung;
@@ -26,6 +26,8 @@ public class RectMover : MonoBehaviour {
 			pos = transform.localPosition;
 			if (pos.x < -1)
 				bewegung = true;
+			else
+				other.LoadInstructions ();
 			j = 0;
 			richtung = 1;
 			Debug.Log ("moveBack ");
@@ -44,8 +46,6 @@ public class RectMover : MonoBehaviour {
 			Debug.Log ("moveNext ");
 		}
 	}
-
-
 
 	void Update () {
 		j++;

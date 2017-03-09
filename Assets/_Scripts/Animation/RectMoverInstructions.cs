@@ -3,6 +3,7 @@ using System.Collections;
 
 public class RectMoverInstructions : MonoBehaviour {
 
+	public GameObject BackButton;
 
 	public GameObject text;
 	private Vector3 pos;
@@ -22,7 +23,12 @@ public class RectMoverInstructions : MonoBehaviour {
 			pos = transform.localPosition;
 			if (pos.x < -1)
 				bewegung = true;
-			j = 0;
+			else {
+				BackButton.SetActive (false);
+			}
+			if (pos.x == -1000)
+			BackButton.SetActive (false);
+				j = 0;
 			richtung = 1;
 			Debug.Log ("moveBack ");
 		}
@@ -30,6 +36,7 @@ public class RectMoverInstructions : MonoBehaviour {
 
 	public void moveNext(){
 		if (j > 50) {
+			BackButton.SetActive (true);
 			pos = transform.localPosition;
 			if (pos.x > -3001){
 				bewegung = true;
@@ -40,8 +47,7 @@ public class RectMoverInstructions : MonoBehaviour {
 			Debug.Log ("moveNext ");
 		}
 	}
-
-
+		
 
 	void Update () {
 		j++;
