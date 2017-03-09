@@ -9,7 +9,7 @@ public class startMusic : MonoBehaviour {
 	public AudioSoundManager soundmanager;
 	// Use this for initialization
 	void Start () {
-		
+		soundmanager.PlayMusic (0);
 	}
 
 	// Update is called once per frame
@@ -18,6 +18,7 @@ public class startMusic : MonoBehaviour {
 	}
 
 	void OnEnable(){
-		soundmanager.PlayMusic (0);
+		
+
 	}
 }
