@@ -26,6 +26,13 @@ public class StartAction : MonoBehaviour {
 	public void LoadLevel3()  {
 		SceneManager.LoadScene("Level3");
 	}
+	public void LoadInstructions()  {
+		SceneManager.LoadScene("Instructions");
+	}
+	public void LoadStory()  {
+		SceneManager.LoadScene("Story");
+		Debug.Log ("StoryLoad");
+	}
 	public void DeletePrefs()  {
 		PlayerPrefs.DeleteAll();
 	}
