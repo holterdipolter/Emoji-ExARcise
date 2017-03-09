@@ -19,8 +19,6 @@ public class EmojiController : MonoBehaviour {
 	private float gravityAwake;
 	private TriggerValues gravityNew;
 
-	//GetComponent<Button>().enabled = false;
-
 	void Awake ()
 	{
 		rigidb = GetComponent<Rigidbody2D>();
@@ -36,7 +34,7 @@ public class EmojiController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Pick Up")) {
 
 			Debug.Log("Trigger Pick Up");
-			TriggerX4.SetActive (true);
+			//TriggerX4.SetActive (true);
 
 			other.gameObject.SetActive (false);
 			text.SetActive (true);
@@ -53,17 +51,19 @@ public class EmojiController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("gravityIn")) {
 
 			Debug.Log ("Trigger gravityIn");
-			TriggerX1.SetActive (true);
+			//TriggerX1.SetActive (true);
 
 			gravityNew = other.GetComponent<TriggerValues> ();
 			rigidb.gravityScale = gravityNew.Gravity;
+
+			//TriggerX3.SetActive (true);
 
 		} 
 
 		if (other.gameObject.CompareTag ("gravityOut")) {
 
 			Debug.Log("Trigger gravityOut");
-			TriggerX2.SetActive (true);
+			//TriggerX2.SetActive (true);
 
 			rigidb.gravityScale = gravityAwake;
 		}
