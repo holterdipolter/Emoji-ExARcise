@@ -26,8 +26,8 @@ public class FlyingEmoji : MonoBehaviour {
 		Debug.Log ("angle ist " + angle);
 		pos = transform.localPosition;
 		if (zaehler < 550) {
-			pos.x = pos.x+speed*0.02f;
-			pos.y = pos.y + richtung*angle*0.01f;
+			pos.x = pos.x+richtung*angle*0.003f;
+			pos.y = pos.y + richtung*speed*0.02f;
 		}
 		}
 		
@@ -37,10 +37,15 @@ public class FlyingEmoji : MonoBehaviour {
 		zaehler++;
 
 		if (pos.x > 18f||pos.y>10||pos.y<-10) {
-			pos.x = -18f;
-			pos.y = Random.Range (-8.0f, 8.0f);
+			pos.x = Random.Range (-18.0f, 18.0f);;
+			pos.y = 9.95f;
 			zaehler = 0;
-			angle = Random.Range (0.2f, 5f);
+			angle = Random.Range (3f, 10f);
+			speed = Random.Range (5f, 10f);
+			//if (upwards)
+			//	upwards = false;
+			//else
+			//	upwards = true;
 		}
 		transform.localPosition = pos;
 	}
