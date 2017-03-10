@@ -2,11 +2,14 @@
 using System.Collections;
 using DigitalRuby.SoundManagerNamespace;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EmojiController : MonoBehaviour {
 
-	public GameObject text;
 	public GameObject naechstesLevel;
+	public GameObject tangibleObjects;
+	public GameObject gewonnen;
+	public GameObject restartEmojiButton;
 	public AudioSoundManager audioman;
 
 	public GameObject TriggerX1;
@@ -14,6 +17,7 @@ public class EmojiController : MonoBehaviour {
 	public GameObject TriggerX3;
 	public GameObject TriggerX4;
 
+	private Button emojiButton;
 	private int level;
 	private Rigidbody2D rigidb;
 	private float gravityAwake;
@@ -26,6 +30,8 @@ public class EmojiController : MonoBehaviour {
 
 		level = SceneManager.GetActiveScene().buildIndex;
 
+		emojiButton = restartEmojiButton.GetComponent<Button>();
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -36,8 +42,11 @@ public class EmojiController : MonoBehaviour {
 			//TriggerX4.SetActive (true);
 
 			other.gameObject.SetActive (false);
-			text.SetActive (true);
+			gewonnen.SetActive (true);
 			naechstesLevel.SetActive (true);
+			tangibleObjects.SetActive (false); 
+			this.gameObject.SetActive (false);
+			emojiButton.interactable = false;
 			audioman.PlaySound (5);
 
 			if (PlayerPrefs.GetInt("level") < level) {

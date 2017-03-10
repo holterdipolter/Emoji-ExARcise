@@ -14,9 +14,9 @@ public class SinMover : MonoBehaviour {
 
 	void Start () {
 
-		x = transform.position.x;
-		y = transform.position.y;
-		z = transform.position.z;
+		x = transform.localPosition.x;
+		y = transform.localPosition.y;
+		z = transform.localPosition.z;
 
 	}
 
