@@ -8,10 +8,10 @@ public class MoveHeadline : MonoBehaviour {
 	private int richtung;
 
 	bool bewegung=false;
-	int j=40;
+	int j=25;
 
 	public void move2Story(){
-		if (j > 40) {
+		if (j > 25) {
 			pos = transform.localPosition;
 			if (pos.x ==0)
 				bewegung = true;
@@ -23,7 +23,7 @@ public class MoveHeadline : MonoBehaviour {
 	}
 
 	public void move2Instructions(){
-		if (j > 40) {
+		if (j > 25) {
 			pos = transform.localPosition;
 			if (pos.x == -1000){
 				bewegung = true;
@@ -43,11 +43,11 @@ public class MoveHeadline : MonoBehaviour {
 	void Update () {
 		j++;
 
-		if (j > 40)
+		if (j > 25)
 			bewegung = false;
 
 		if (bewegung) {
-			pos.x = pos.x +25*richtung;
+			pos.x = pos.x +40*richtung;
 			transform.localPosition = pos;
 		}
 

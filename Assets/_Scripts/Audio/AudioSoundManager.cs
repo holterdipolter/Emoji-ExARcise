@@ -23,6 +23,7 @@ namespace DigitalRuby.SoundManagerNamespace
 
 		public AudioSource[] SoundAudioSources;
 		public AudioSource[] MusicAudioSources;
+		public AudioMute other;
 
 		public void PlaySound(int index)
 		{
@@ -67,12 +68,14 @@ namespace DigitalRuby.SoundManagerNamespace
 		{
 			SoundManager.SoundVolume = 0f;
 			SoundManager.MusicVolume = 0f;
+			other.MuteIt ();
 		}
 
 		public void UnMute()
 		{
 			SoundManager.SoundVolume = 1f;
 			SoundManager.MusicVolume = 1f;
+			other.UnMuteIt ();
 		}
 	}
 }
