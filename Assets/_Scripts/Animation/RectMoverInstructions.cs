@@ -21,6 +21,7 @@ public class RectMoverInstructions : MonoBehaviour {
 		
 	}
 
+
 	public void moveBack(){
 		if (j > 40) {
 			pos = transform.localPosition;
@@ -38,7 +39,7 @@ public class RectMoverInstructions : MonoBehaviour {
 		if (j > 40) {
 
 			pos = transform.localPosition;
-			if (pos.x > -3001){
+			if (pos.x > -8001){
 				bewegung = true;
 		}
 			
@@ -52,6 +53,7 @@ public class RectMoverInstructions : MonoBehaviour {
 	void Update () {
 		j++;
 
+
 		if (j > 40)
 			bewegung = false;
 
@@ -59,21 +61,41 @@ public class RectMoverInstructions : MonoBehaviour {
 			pos.x = pos.x +25*richtung;
 			transform.localPosition = pos;
 		}
-		if (pos.x < -3500) {
-			nextButton.active = false;
-			storyButton.active = true;
-		} else {
-			nextButton.active = true;
-			storyButton.active = false;
-		}
-		if (pos.x > -500)
-			backButton.SetActive (false);
-		else
-			backButton.SetActive (true);
 
-		if (pos.x == -5000)
-			backButton.SetActive (false);
+		/*if (pos.x < -3500 || pos.x > -4500) {
+			nextButton.SetActive (false);
+			storyButton.SetActive (true);
+		} else {
+			nextButton.SetActive (true);
+			storyButton.SetActive (false);
+		}*/
+
+		if (pos.x <= 0 && pos.x > -3500 || pos.x < -4500 && pos.x > -8500)
+			nextButton.SetActive (true);
 		else
+			nextButton.SetActive (false);
+
+		if (pos.x < -500 && pos.x > -4500 || pos.x < -5500)
 			backButton.SetActive (true);
+		else
+			backButton.SetActive (false);
+
+		if (pos.x < -8500)
+			playButton.SetActive (true);
+		else
+			playButton.SetActive (false);
+
+		if (pos.x > -5500 && pos.x < -4500)
+			instrButton.SetActive (true);
+		else
+			instrButton.SetActive (false);
+
+		if (pos.x > -4500 && pos.x < -3500)
+			storyButton.SetActive (true);
+		else
+			storyButton.SetActive (false);
+			
+
+
 	}
 }
