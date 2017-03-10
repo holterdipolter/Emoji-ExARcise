@@ -15,8 +15,6 @@ public class RingMover : MonoBehaviour {
 
 	private bool richtung = true;
 
-	private int i=0;
-
 
 	void Start () {
 
@@ -43,7 +41,6 @@ public class RingMover : MonoBehaviour {
 
 		if (wiederZurueck == false) {
 			if (richtungNachInnen == false) {
-				Debug.Log ("stepnr: " + i++);
 
 				updateScale = transform.localScale + scaleStep;
 				transform.localScale = updateScale;
@@ -55,7 +52,6 @@ public class RingMover : MonoBehaviour {
 			}
 
 			if (richtungNachInnen == true) {
-				Debug.Log ("stepnr: " + i++);
 
 				updateScale = transform.localScale - scaleStep;
 				transform.localScale = updateScale;
@@ -68,7 +64,6 @@ public class RingMover : MonoBehaviour {
 		}
 
 		if (wiederZurueck == true){
-			Debug.Log("stepnr: " + i++);
 
 			if (richtung == true) {
 

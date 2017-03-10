@@ -17,8 +17,6 @@ public class Gewonnen : MonoBehaviour {
 	private Vector3 UpdateScale;
 	private bool stopAni = false;
 
-	private int i=0;
-
 
 	// Use this for initialization
 	void Start () {
@@ -41,15 +39,12 @@ public class Gewonnen : MonoBehaviour {
 		
 		if (stopAni == false) {
 			
-			Debug.Log("stepnr: " + i++);
 			Debug.Log("posStartObject.transform.position: " + StartObject.transform.position);
 			Debug.Log("startPosition: " + startPosition);
 			Debug.Log("postition Differenz: " + postitionDiff);
 			Debug.Log("postitionStep: " + postitionStep);
 
 			transform.Translate (postitionStep);
-
-
 
 			UpdateScale = transform.localScale + scaleStep;
 			transform.localScale = UpdateScale;
