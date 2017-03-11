@@ -17,6 +17,8 @@ public class EmojiController : MonoBehaviour {
 	public GameObject TriggerX3;
 	public GameObject TriggerX4;
 
+	public GameObject Shrinker;
+
 	private Button emojiButton;
 	private int level;
 	private Rigidbody2D rigidb;
@@ -45,7 +47,8 @@ public class EmojiController : MonoBehaviour {
 			gewonnen.SetActive (true);
 			naechstesLevel.SetActive (true);
 			tangibleObjects.SetActive (false); 
-			this.gameObject.SetActive (false);
+			//this.gameObject.SetActive (false);
+			Shrinker.SetActive(true);
 			emojiButton.interactable = false;
 			audioman.PlaySound (5);
 
