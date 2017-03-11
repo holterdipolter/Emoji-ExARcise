@@ -7,6 +7,7 @@ public class EmojiShrink : MonoBehaviour {
 	public GameObject emoji;
 	private Vector3 size;
 	int j;
+	public int Geschwindigkeit;
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +27,8 @@ public class EmojiShrink : MonoBehaviour {
 		if(j<50)
 		j++;
 		
-		size.x = size.x - 1f;
-		size.y = size.y - 1f;
+		size.x = size.x - Geschwindigkeit;
+		size.y = size.y - Geschwindigkeit;
 		emoji.transform.localScale = size;
 		if (size.x <= 0)
 			emoji.SetActive (false);
