@@ -27,7 +27,7 @@ public class GameObjectController : MonoBehaviour {
 		
 		offsetpos = transform.position - TargetTangibleObj.transform.position;
 		z = transform.position.z;
-		startRotationZ = transform.rotation.z;
+		startRotationZ = transform.eulerAngles.z;
 
 	}
 
@@ -50,7 +50,7 @@ public class GameObjectController : MonoBehaviour {
 
 		transform.position = new Vector3(posWS.x,posWS.y,z);
 
-		Debug.Log(" qrLU: "+ TargetRefLUScreenSpace + " qrRO: "+ TargetRefROScreenSpace + " TO: "+ TargetTangibleObjScreenSpace + " pos: "+ pos + " RefDistance: " + (ImageRefRO.transform.position.x - ImageRefLU.transform.position.x) + " Heading: " + (Mathf.Rad2Deg*Mathf.Asin(TargetTangibleObj.transform.forward.x)));
+		//Debug.Log(" qrLU: "+ TargetRefLUScreenSpace + " qrRO: "+ TargetRefROScreenSpace + " TO: "+ TargetTangibleObjScreenSpace + " pos: "+ pos + " RefDistance: " + (ImageRefRO.transform.position.x - ImageRefLU.transform.position.x) + " Heading: " + (Mathf.Rad2Deg*Mathf.Asin(TargetTangibleObj.transform.forward.x)));
 
 
 		// Rotation:
