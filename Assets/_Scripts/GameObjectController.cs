@@ -66,6 +66,7 @@ public class GameObjectController : MonoBehaviour {
 
 		transform.eulerAngles = angle;
 
-		Debug.Log ("TargetTangibleObj.transform.forward: " + TargetTangibleObj.transform.forward + "WinkelZ: " + angle.z);
+		//Debug.Log ("TargetTangibleObj.transform.forward: " + TargetTangibleObj.transform.forward + "WinkelZ: " + angle.z);
 
+	}
 }
