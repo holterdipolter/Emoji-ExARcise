@@ -13,8 +13,7 @@ public class GameObjectController : MonoBehaviour {
 	public float offsetX;
 	public float offsetY;
 
-	private float offsetRotation = 0;
-
+	private float startRotationZ;
 	private Vector3 offsetpos;
 	//private float offsetrot=298;
 	private float offsetrot;
@@ -28,6 +27,8 @@ public class GameObjectController : MonoBehaviour {
 		
 		offsetpos = transform.position - TargetTangibleObj.transform.position;
 		z = transform.position.z;
+		startRotationZ = transform.rotation.z;
+
 	}
 
 	// Update is called once per frame
@@ -56,7 +57,7 @@ public class GameObjectController : MonoBehaviour {
 
 		//transform.Rotate (0,0,TargetTangibleObj.transform.forward.x);
 		//transform.RotateAround (0,0,TargetTangibleObj.transform.forward.x);
-		transform.eulerAngles = new Vector3 (0,0,(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) +offsetRotation));
+		transform.eulerAngles = new Vector3 (0,0,(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) +startRotationZ));
 		//Debug.Log (TargetTangibleObj.transform.forward.x);
 
 		//transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.identity, speed * Time.deltaTime);
