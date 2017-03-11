@@ -7,17 +7,16 @@ using UnityEngine.UI;
 public class EmojiController : MonoBehaviour {
 
 	public GameObject naechstesLevel;
-	public GameObject tangibleObjects;
+	public GameObject tos;
 	public GameObject gewonnen;
 	public GameObject restartEmojiButton;
+	public GameObject shrinker;
 	public AudioSoundManager audioman;
 
 	public GameObject TriggerX1;
 	public GameObject TriggerX2;
 	public GameObject TriggerX3;
 	public GameObject TriggerX4;
-
-	public GameObject Shrinker;
 
 	private Button emojiButton;
 	private int level;
@@ -44,11 +43,11 @@ public class EmojiController : MonoBehaviour {
 			//TriggerX4.SetActive (true);
 
 			//other.gameObject.SetActive (false);
+			//this.gameObject.SetActive (false);
 			gewonnen.SetActive (true);
 			naechstesLevel.SetActive (true);
-			tangibleObjects.SetActive (false); 
-			//this.gameObject.SetActive (false);
-			Shrinker.SetActive(true);
+			tos.SetActive (false); 
+			shrinker.SetActive(true);
 			emojiButton.interactable = false;
 			audioman.PlaySound (5);
 
