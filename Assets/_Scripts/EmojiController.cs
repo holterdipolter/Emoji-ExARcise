@@ -41,7 +41,7 @@ public class EmojiController : MonoBehaviour {
 			Debug.Log("Trigger Pick Up");
 			//TriggerX4.SetActive (true);
 
-			other.gameObject.SetActive (false);
+			//other.gameObject.SetActive (false);
 			gewonnen.SetActive (true);
 			naechstesLevel.SetActive (true);
 			tangibleObjects.SetActive (false); 

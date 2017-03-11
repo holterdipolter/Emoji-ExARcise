@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="Marker1" size="1.000000 1.000000" />
-    <ImageTarget name="target-klammer" size="1.000000 1.000000" />
-    <ImageTarget name="brovision2" size="1.000000 1.000000" />
-    <ImageTarget name="brovision1" size="1.000000 1.000000" />
-    <ImageTarget name="Ref2" size="300.000000 300.000000" />
-    <ImageTarget name="Ref1" size="300.000000 300.000000" />
-    <ImageTarget name="qrMark1" size="500.000000 500.000000" />
-    <ImageTarget name="RefRO" size="512.000000 512.000000" />
-    <ImageTarget name="RefLU" size="512.000000 512.000000" />
-    <ImageTarget name="jpeg" size="290.000000 290.000000" />
+    <ImageTarget name="TO4" size="1.000000 0.973451" />
+    <ImageTarget name="TO3" size="1.000000 1.000000" />
+    <ImageTarget name="TO2" size="1.000000 1.004545" />
+    <ImageTarget name="TO1" size="1.000000 1.000000" />
   </Tracking>
 </QCARConfig>
