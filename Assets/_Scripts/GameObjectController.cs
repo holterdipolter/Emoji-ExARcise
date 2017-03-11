@@ -15,10 +15,10 @@ public class GameObjectController : MonoBehaviour {
 
 	private float startRotationZ;
 	private Vector3 offsetpos;
-	//private float offsetrot=298;
-	private float offsetrot;
+
 	private Vector3 pos;
 	private Vector3 posWS;
+	Vector3 angle;
 	private float z;
 
 
@@ -55,15 +55,17 @@ public class GameObjectController : MonoBehaviour {
 
 		// Rotation:
 
-		//transform.Rotate (0,0,TargetTangibleObj.transform.forward.x);
-		//transform.RotateAround (0,0,TargetTangibleObj.transform.forward.x);
-		transform.eulerAngles = new Vector3 (0,0,(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) +startRotationZ));
-		//Debug.Log (TargetTangibleObj.transform.forward.x);
 
-		//transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.identity, speed * Time.deltaTime);
-		//'speed' is a variable you define or a constant you insert and is measured in degrees per second.
-		//If you want an eased rotation, change 'RotateTowards' to 'Slerp' and adjust the 'speed' downward a bunch.
+		if (TargetTangibleObj.transform.forward.y >= 0) {
+			angle = new Vector3 (0,0,(360-(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) + 90) + startRotationZ));
+		
+		} else {
+			angle = new Vector3 (0,0,(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) + 90 + startRotationZ));
+		
+		}
 
-		//Debug.Log("Heading: " + transform.forward.x * Mathf.Rad2Deg);
-	}
+		transform.eulerAngles = angle;
+
+		Debug.Log ("TargetTangibleObj.transform.forward: " + TargetTangibleObj.transform.forward + "WinkelZ: " + angle.z);
+
 }
