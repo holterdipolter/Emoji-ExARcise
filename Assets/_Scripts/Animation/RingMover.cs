@@ -42,7 +42,7 @@ public class RingMover : MonoBehaviour {
 		if (wiederZurueck == false) {
 			if (richtungNachInnen == false) {
 
-				updateScale = transform.localScale + scaleStep;
+				updateScale = transform.localScale + scaleStep*Time.deltaTime*30;
 				transform.localScale = updateScale;
 			
 				if (transform.localScale.x >= endScale.x) {
@@ -53,7 +53,7 @@ public class RingMover : MonoBehaviour {
 
 			if (richtungNachInnen == true) {
 
-				updateScale = transform.localScale - scaleStep;
+				updateScale = transform.localScale - scaleStep*Time.deltaTime*30;
 				transform.localScale = updateScale;
 
 				if (transform.localScale.x <= ringdurchmesserMin) {
@@ -67,7 +67,7 @@ public class RingMover : MonoBehaviour {
 
 			if (richtung == true) {
 
-				updateScale = transform.localScale + scaleStep;
+				updateScale = transform.localScale + scaleStep*Time.deltaTime*30;
 				transform.localScale = updateScale;
 
 				if (transform.localScale.x >= endScale.x) {
@@ -77,7 +77,7 @@ public class RingMover : MonoBehaviour {
 
 			if (richtung == false) {
 
-				updateScale = transform.localScale - scaleStep;
+				updateScale = transform.localScale - scaleStep*Time.deltaTime*30;
 				transform.localScale = updateScale;
 
 				if (transform.localScale.x <= ringdurchmesserMin) {
