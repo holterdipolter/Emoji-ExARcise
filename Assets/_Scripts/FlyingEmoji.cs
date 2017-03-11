@@ -36,7 +36,7 @@ public class FlyingEmoji : MonoBehaviour {
 		bewegung ();
 		zaehler++;
 
-		if (pos.x > 18f||pos.y>10||pos.y<-10) {
+		if (pos.x < -17f||pos.x > 18f||pos.y>10||pos.y<-10) {
 			pos.x = Random.Range (-18.0f, 18.0f);;
 			pos.y = 9.95f;
 			zaehler = 0;
