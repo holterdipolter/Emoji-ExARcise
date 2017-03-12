@@ -12,7 +12,7 @@ public class _debug : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Debug.Log(transform.position);
+		Debug.Log(transform.forward);
 
 	
 	}

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EmojiController : MonoBehaviour {
 
+	public GameObject sendButton;
 	public GameObject naechstesLevel;
 	public GameObject tos;
 	public GameObject gewonnen;
@@ -76,6 +77,14 @@ public class EmojiController : MonoBehaviour {
 			//TriggerX2.SetActive (true);
 
 			rigidb.gravityScale = gravityAwake;
+		}
+
+
+		if (other.gameObject.CompareTag ("sendButtonActive")) {
+
+			Debug.Log("Trigger sendButtonActive");
+
+			sendButton.SetActive (true);
 		}
 	}
 

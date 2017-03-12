@@ -29,12 +29,13 @@ public class GameObjectController : MonoBehaviour {
 		z = transform.position.z;
 		startRotationZ = transform.eulerAngles.z;
 
+
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		// Kallibrieren:
+		// POSITION IN RELATION ZU KALLIBRIRUNGSMARKER BESTIMMEN:
 		// Convert Worldspace to Screenspace
 		Vector3 TargetTangibleObjScreenSpace = Camera.main.WorldToScreenPoint(TargetTangibleObj.transform.position);
 		Vector3 TargetRefLUScreenSpace = Camera.main.WorldToScreenPoint(TargetRefLU.transform.position);
@@ -48,12 +49,14 @@ public class GameObjectController : MonoBehaviour {
 		posWS.x = (pos.x * (ImageRefRO.transform.position.x - ImageRefLU.transform.position.x)) + ImageRefLU.transform.position.x + offsetX;
 		posWS.y = (pos.y * (ImageRefRO.transform.position.y - ImageRefLU.transform.position.y)) + ImageRefLU.transform.position.y + offsetY;
 
+
+		// set final position
 		transform.position = new Vector3(posWS.x,posWS.y,z);
 
 		//Debug.Log(" qrLU: "+ TargetRefLUScreenSpace + " qrRO: "+ TargetRefROScreenSpace + " TO: "+ TargetTangibleObjScreenSpace + " pos: "+ pos + " RefDistance: " + (ImageRefRO.transform.position.x - ImageRefLU.transform.position.x) + " Heading: " + (Mathf.Rad2Deg*Mathf.Asin(TargetTangibleObj.transform.forward.x)));
 
 
-		// Rotation:
+		// ROTATION:
 
 
 		if (TargetTangibleObj.transform.forward.y >= 0) {
@@ -66,7 +69,7 @@ public class GameObjectController : MonoBehaviour {
 
 		transform.eulerAngles = angle;
 
-		Debug.Log ("TargetTangibleObj.transform.forward: " + TargetTangibleObj.transform.forward + "WinkelZ: " + TargetTangibleObj.transform.forward.y);
+		//Debug.Log ("TargetTangibleObj.transform.forward: " + TargetTangibleObj.transform.forward + "WinkelZ: " + TargetTangibleObj.transform.forward.y);
 
 	}
 }
