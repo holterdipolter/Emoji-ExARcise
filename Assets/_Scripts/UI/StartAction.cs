@@ -108,6 +108,10 @@ public class StartAction : MonoBehaviour {
 		SceneManager.LoadScene(15);
 	}
 
+	public void LoadLevel16()  {
+		SceneManager.LoadScene(16);
+	}
+
 	public void LoadInstructions()  {
 		SceneManager.LoadScene("Instructions");
 	}

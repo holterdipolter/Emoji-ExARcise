@@ -11,8 +11,7 @@ public class setLastLevel : MonoBehaviour {
 
 		lastLevel = SceneManager.GetActiveScene().buildIndex;
 
-		PlayerPrefs.SetInt ("lastLevel", lastLevel);
-
+			PlayerPrefs.SetInt ("lastLevel", lastLevel);
 	}
 	
 }
