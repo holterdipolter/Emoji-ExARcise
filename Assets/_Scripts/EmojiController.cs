@@ -83,7 +83,7 @@ public class EmojiController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("sendButtonActive")) {
 
 			Debug.Log("Trigger sendButtonActive");
-
+			audioman.PlaySound (0);
 			sendButton.SetActive (true);
 		}
 	}
