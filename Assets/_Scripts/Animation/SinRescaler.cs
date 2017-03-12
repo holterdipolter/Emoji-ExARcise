@@ -6,22 +6,23 @@ public class SinRescaler : MonoBehaviour {
 	public float Amplitude;
 	public float Speed;
 
-	private float x;
-	private float y;
-	private float z;
+	private Vector3 scale;
+
+	private float i = 0;
 
 
 	void Start () {
 
-		x = transform.localScale.x;
-		y = transform.localScale.y;
-		z = transform.localScale.z;
+		scale = transform.localScale;
 
 	}
 
 	void Update () {
-		
-		transform.localScale = new Vector3 ((x + Amplitude*(Mathf.Sin((Time.deltaTime + Time.frameCount * 0.1f) * Speed))),(y + Amplitude*(Mathf.Sin((Time.deltaTime + Time.frameCount * 0.1f) * Speed))),z);
 
+		i = i + 5 * Speed * Time.deltaTime;
+
+		transform.localScale = new Vector3 ((scale.x + Amplitude*Mathf.Sin(i)),(scale.y + Amplitude*Mathf.Sin(i)),scale.z);
+
+		if (i>=360){ i = 0;};
 	}
 }

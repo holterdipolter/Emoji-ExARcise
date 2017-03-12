@@ -7,22 +7,24 @@ public class SinMover : MonoBehaviour {
 	public float AmplitudeY;
 	public float Speed;
 
-	private float x;
-	private float y;
-	private float z;
+	private Vector3 pos;
+
+	private float i = 0;
 
 
 	void Start () {
 
-		x = transform.localPosition.x;
-		y = transform.localPosition.y;
-		z = transform.localPosition.z;
+		pos = transform.localPosition;
 
 	}
 
 	void Update () {
-		
-		transform.localPosition = new Vector3 ((x + AmplitudeX*(Mathf.Sin((Time.deltaTime + Time.frameCount*0.1f)*Speed))),(y + AmplitudeY*(Mathf.Sin((Time.deltaTime + Time.frameCount*0.1f)*Speed))),z);
 
+		i = i + 5 * Speed * Time.deltaTime;
+
+		transform.localPosition = new Vector3 ((pos.x + AmplitudeX*Mathf.Sin(i)),(pos.y + AmplitudeY*Mathf.Sin(i)),pos.z);
+
+		if (i>=360){ i = 0;};
+	
 	}
 }
