@@ -59,14 +59,7 @@ public class GameObjectController : MonoBehaviour {
 		// ROTATION:
 
 
-		if (TargetTangibleObj.transform.forward.y >= 0) {
-			angle = new Vector3 (0,0,(360-(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) + 90) + startRotationZ));
-		
-		} else {
-			angle = new Vector3 (0,0,(Mathf.Rad2Deg * Mathf.Asin(TargetTangibleObj.transform.forward.x) + 90 + startRotationZ));
-		
-		}
-
+		angle = new Vector3(0,0, Mathf.Atan2(TargetTangibleObj.transform.forward.x, TargetTangibleObj.transform.forward.y) * Mathf.Rad2Deg*(-1));
 		transform.eulerAngles = angle;
 
 		//Debug.Log ("TargetTangibleObj.transform.forward: " + TargetTangibleObj.transform.forward + "WinkelZ: " + TargetTangibleObj.transform.forward.y);
