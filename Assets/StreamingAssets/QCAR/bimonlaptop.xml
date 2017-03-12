@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="TO4" size="1.000000 1.000000" />
+    <ImageTarget name="TO3" size="1.000000 1.000000" />
+    <ImageTarget name="TO2" size="1.000000 1.000000" />
+    <ImageTarget name="TO1" size="1.000000 1.000000" />
     <ImageTarget name="RefRO" size="1.000000 1.000000" />
     <ImageTarget name="RefLU" size="1.000000 1.000000" />
-    <ImageTarget name="TO4" size="1.000000 0.973451" />
-    <ImageTarget name="TO3" size="1.000000 1.000000" />
-    <ImageTarget name="TO2" size="1.000000 1.004545" />
-    <ImageTarget name="TO1" size="1.000000 1.000000" />
   </Tracking>
 </QCARConfig>
