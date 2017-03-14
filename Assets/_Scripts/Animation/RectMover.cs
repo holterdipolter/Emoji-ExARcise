@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//wird nicht mehr genutzt
+
 public class RectMover : MonoBehaviour {
 
 	//public float AmplitudeX;

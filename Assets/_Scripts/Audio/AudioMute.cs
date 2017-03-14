@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Deaktivierung/Aktivierung des Audio-An-Aus-Buttons
+
 public class AudioMute : MonoBehaviour {
-	public static bool mute=false;
+	public static bool mute=false; //spielübergreifende Variable, Speichern des Mutezustands
 
 	public GameObject TonOn;
 	public GameObject TonOff;

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DigitalRuby.SoundManagerNamespace;
 
+//Scenenwechsel
 
 public class StartAction : MonoBehaviour {
 
@@ -13,14 +14,14 @@ public class StartAction : MonoBehaviour {
 	public void LoadMenu()  {
 		SceneManager.LoadScene("Menu");
 	}
-
+	//normaler Levelmenuaufruf
 	public void LoadLevelMenu()  {
 		SceneManager.LoadScene("LevelMenu");
 	}
-
+	//Levelmenuaufruf aus Hauptmenu, Überprüfung, ob schon ein Level gespielt wurde
 	public void LoadLevelMenuCheck()  {
 		lastLevel = PlayerPrefs.GetInt ("lastLevel");
-
+		//wenn noch kein Level gespielt, erst Instructions laden
 		if (lastLevel == 0) {
 			SceneManager.LoadScene ("Instructions");
 			soundmanager.PlayMusic (2);
@@ -28,11 +29,12 @@ public class StartAction : MonoBehaviour {
 			SceneManager.LoadScene ("LevelMenu");
 		}
 	}
-
+	//Schließen
 	public void LoadExit()  {
 		Application.Quit();
 	}
 
+	//aus den PalyerPrefs das zuletzt gestartete Level auslesen
 	public void LoadLastLevel()  {
 		lastLevel = PlayerPrefs.GetInt ("lastLevel");
 
@@ -42,12 +44,13 @@ public class StartAction : MonoBehaviour {
 			SceneManager.LoadScene (lastLevel);
 		}
 	}
-
+	//Levelrestart
 	public void restart()  {
 		currentLevel = SceneManager.GetActiveScene().buildIndex;
 		SceneManager.LoadScene (currentLevel);
 	}
 
+	//Levelaufrufe anhand der Indizes
 	public void LoadLevel1()  {
 		SceneManager.LoadScene (1);
 	}

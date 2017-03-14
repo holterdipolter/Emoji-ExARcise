@@ -4,6 +4,10 @@ using UnityEngine;
 using DigitalRuby.SoundManagerNamespace;
 public class AudioButtonClick : MonoBehaviour {
 
+
+	//Nicht mehr benötigt
+
+
 	// Use this for initialization
 	void Start () {
 		//AudioSoundManager.PlaySound(0);

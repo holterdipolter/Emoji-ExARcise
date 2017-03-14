@@ -8,7 +8,7 @@ public class initLastLevel : MonoBehaviour {
 	private int lastLevel;
 
 	void Start () {
-
+		//letztes Level auslesen
 		lastLevel = PlayerPrefs.GetInt ("lastLevel");
 
 		if (lastLevel >= 1) {

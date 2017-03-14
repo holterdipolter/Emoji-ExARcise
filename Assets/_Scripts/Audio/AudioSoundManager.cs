@@ -16,42 +16,24 @@ namespace DigitalRuby.SoundManagerNamespace
 {
 	public class AudioSoundManager : MonoBehaviour
 	{
-		public Slider SoundSlider;
-		public Slider MusicSlider;
-		public InputField SoundCountTextBox;
-		public Toggle PersistToggle;
-
 		public AudioSource[] SoundAudioSources;
 		public AudioSource[] MusicAudioSources;
 		public AudioMute other;
 
 		public void PlaySound(int index)
 		{
-			
 			SoundAudioSources[index].PlayOneShotSoundManaged(SoundAudioSources[index].clip);
-
 		}
 
 		public void PlayMusic(int index)
 		{
-			
 			MusicAudioSources[index].PlayLoopingMusicManaged(1.0f, 1.0f, true);
-
 		}
 
 
 		private void CheckClick()
 		{
-			/*
-			if (Input.GetMouseButtonUp(1)) {
-
-				PlayMusic (0);
-			}
-			if (Input.GetMouseButtonDown(0)){
-				PlaySound(0);
-				PlayMusic(1);
-			}
-*/
+			//not used anymore
 		}
 
 		private void Start()
@@ -61,16 +43,16 @@ namespace DigitalRuby.SoundManagerNamespace
 
 		private void Update()
 		{
-			//CheckClick();
-		}
 
+		}
+		//Alles lautlos
 		public void Mute()
 		{
 			SoundManager.SoundVolume = 0f;
 			SoundManager.MusicVolume = 0f;
 			other.MuteIt ();
 		}
-
+		//alles wieder laut
 		public void UnMute()
 		{
 			SoundManager.SoundVolume = 1f;
