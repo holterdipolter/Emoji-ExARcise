@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class initLastLevel : MonoBehaviour {
 
+	// liest das in "PlayerPrefs" gespeicherte letzte Level aus
+	// ist kein Wert gespeichert wird der Wert auf 0 gesetzt
+
 	private int lastLevel;
 
 	void Start () {

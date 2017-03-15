@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class EmojiController : MonoBehaviour {
 
+	// fuehrt verschiedene Aktionen, die vom Emoji ausgelöst werden:
+	// - "Gewonnen"-Animation auslösen, wenn Send-Button (Ziel) erreicht
+	// - "Emoji-Shrink"-Animation auslösen, wenn Send-Button (Ziel) erreicht
+	// - Gravity Wert verändern, wenn im Bereich eines Gravity-Felds
+	// - UI-Restart-Button aktivieren, wenn Emoji gestartet wird
+	// - Audio-Aktionen auslösen
+	// - wenn Level erfolgreich, speichere Level in PlayerPrefs
+
 	public GameObject sendButton;
 	public GameObject naechstesLevel;
 	public GameObject tos;
@@ -13,11 +21,6 @@ public class EmojiController : MonoBehaviour {
 	public GameObject restartEmojiButton;
 	public GameObject shrinker;
 	public AudioSoundManager audioman;
-
-	public GameObject TriggerX1;
-	public GameObject TriggerX2;
-	public GameObject TriggerX3;
-	public GameObject TriggerX4;
 
 	private Button emojiButton;
 	private int level;
@@ -27,24 +30,29 @@ public class EmojiController : MonoBehaviour {
 
 	void Awake ()
 	{
+		// Speichere gravityScale-Wert
 		rigidb = GetComponent<Rigidbody2D>();
 		gravityAwake = rigidb.gravityScale;
 
+		// Speichere Level anhand des buildIndex der Szene
 		level = SceneManager.GetActiveScene().buildIndex;
 
+		// Speichere UI-BUtton "restartEmojiButton"
 		emojiButton = restartEmojiButton.GetComponent<Button>();
 
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		
+
+		// Wenn Send-Button beruehrt wird:
 		if (other.gameObject.CompareTag ("Pick Up")) {
+			// - "Gewonnen"-Animation auslösen
+			// - "Emoji-Shrink"-Animation auslösen
+			// - Audio-Aktionen auslösen
+			// - speichere Level in PlayerPrefs
 
 			Debug.Log("Trigger Pick Up");
-			//TriggerX4.SetActive (true);
 
-			//other.gameObject.SetActive (false);
-			//this.gameObject.SetActive (false);
 			gewonnen.SetActive (true);
 			naechstesLevel.SetActive (true);
 			tos.SetActive (false); 
@@ -59,29 +67,30 @@ public class EmojiController : MonoBehaviour {
 			}
 		}
 
+		// bei Eintritt in Gravitionsfeld:
 		if (other.gameObject.CompareTag ("gravityIn")) {
 
 			Debug.Log ("Trigger gravityIn");
-			//TriggerX1.SetActive (true);
 
+			// Trigger Value (Gravity) auslesen und in Rigidbody setzen
 			gravityNew = other.GetComponent<TriggerValues> ();
 			rigidb.gravityScale = gravityNew.Gravity;
 
-			//TriggerX3.SetActive (true);
-
 		} 
 
+		// bei Austritt in Gravitionsfeld (optional):
 		if (other.gameObject.CompareTag ("gravityOut")) {
 
 			Debug.Log("Trigger gravityOut");
-			//TriggerX2.SetActive (true);
 
+			// setze Gravity zurück auf Anfangswert
 			rigidb.gravityScale = gravityAwake;
 		}
 
 
 		if (other.gameObject.CompareTag ("sendButtonActive")) {
 
+			// Aktivere UI-Restart-Button bzw. deaktiviere UI-Start-Button, wenn UI-Start-Button gedrueckt
 			Debug.Log("Trigger sendButtonActive");
 			audioman.PlaySound (0);
 			sendButton.SetActive (true);

@@ -6,10 +6,8 @@ using UnityEngine.UI;
 
 public class LoadLevel : MonoBehaviour {
 
-	public GameObject TriggerX1;
-	public GameObject TriggerX2;
-	public GameObject TriggerX3;
-	public GameObject TriggerX4;
+	// ueberprueft welche Level bereits erfolgreich absolviert wurden
+	// stellt entspechend alle Level-Buttons im Level-Menu auf "active"
 
 	private int level = 0;
 
@@ -21,21 +19,19 @@ public class LoadLevel : MonoBehaviour {
 
 	void Start () {
 
+		// speichere alle Level-Buttons in einem Array, sortiere aufsteigend nach Namen
 		levelObjects = GameObject.FindGameObjectsWithTag("ButtonLevel").OrderBy( go => go.name ).ToArray();
-		//TriggerX1.SetActive (true);
 
+		// lese das in PlayerPrefs gespeicherte letzte Level aus
 		level = PlayerPrefs.GetInt("level");
 		Debug.Log("loadedLevelState: " +level);
-
-		//TriggerX2.SetActive (true);
 
 		i = 0;
 
 		foreach (GameObject element in levelObjects)
 		{
-
+			// Level-Buttons der Level auf "active" setzen, die bereits gespielt wurden
 			if (i > level) {
-				//TriggerX3.SetActive (true);
 
 				levelObjectButton = element.GetComponent<Button>();				
 				levelObjectButton.interactable = false;
@@ -43,7 +39,6 @@ public class LoadLevel : MonoBehaviour {
 				levelObjectButtonText = levelObjectButton.GetComponentInChildren<Text>();
 				levelObjectButtonText.color = new Color32(0,0,0,100);
 
-				//TriggerX4.SetActive (true);
 			}
 
 			i++;

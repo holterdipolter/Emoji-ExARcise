@@ -123,6 +123,7 @@ public class StartAction : MonoBehaviour {
 		SceneManager.LoadScene("Story");
 	}
 
+	// die in PlayerPrefs gespeicherten Wert löschen
 	public void DeletePrefs()  {
 		PlayerPrefs.DeleteAll();
 	}

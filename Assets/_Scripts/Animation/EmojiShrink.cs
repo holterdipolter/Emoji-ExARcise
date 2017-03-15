@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//verkleinert Emoji, wenn der Sendbutton berührt wurde
+// verkleinert Emoji, wenn der Sendbutton berührt wurde
 
 public class EmojiShrink : MonoBehaviour {
 
